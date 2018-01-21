@@ -21,16 +21,20 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven { url "http://repo.spring.io/libs-milestone/" }
 }
 
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
+	compile(group: 'org.springframework.security.extensions', name: 'spring-security-saml-dsl', version: '1.0.0.M2')
+	compile(group: 'org.springframework.security.extensions', name: 'spring-security-saml2-core', version: '1.0.3.RELEASE')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	// groovy dependencies
-	compile(group: 'org.codehaus.groovy', name: 'groovy-templates', version: '2.4.13')
-	compile(group: 'org.grails', name: 'gorm-hibernate4-spring-boot', version: '6.1.8.RELEASE')
-	compile(group: 'org.grails', name: 'grails-gsp-spring-boot', version: '1.0.0')
+	compile(group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.5.9.RELEASE')
+	// groovy dependencies TODO find which dependencies cause the conflict with Spring Boot
+//	compile(group: 'org.codehaus.groovy', name: 'groovy-templates', version: '2.4.13')
+//	compile(group: 'org.grails', name: 'gorm-hibernate4-spring-boot', version: '6.1.8.RELEASE')
+//	compile(group: 'org.grails', name: 'grails-gsp-spring-boot', version: '1.0.0')
 	compile('org.codehaus.groovy:groovy')
 	// end of groovy dependencies
 	runtime('org.springframework.boot:spring-boot-devtools')
